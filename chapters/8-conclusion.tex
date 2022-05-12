@@ -1,1 +1,83 @@
-\chapter{Conclusion}
+\chapter{Conclusion and Further Work}
+\label{ch:8}
+
+\section{Conclusion}
+
+% In this thesis we studied how the data format of trajectories and outlined seven different approaches for quantifying the similarity distance between them. After describing how each of the algorithms were designed, a set up was created so for experimentally comparing them. A data set and an application of similarity scores were chosen so that the effects of the distance measure could be as isolated as possible for a perceptible comparison. 
+
+In this thesis, we studied seven similarity measures for trajectory data, five conventional ones and two recent ones. 
+First, we clarified what constitutes a trajectory, and then we discussed how the notion of similarity of them varies.
+The measures we reviewed vary in how they defined similarity and we elaborated upon some of their advantages and disadvantages. 
+
+In order to experimentally compare the algorithms, we defined an application wherein the only thing that varied was the similarity distance computation. 
+The application we decided on was clustering and we used two techniques for creating them.
+The clusters gave us a vantage point for further description of the measures, and from the clusters, we were able to observe the theoretical characteristics of the measures in practice. 
+We summarize what has been achieved in this thesis by referring back to the research objectives:
+
+
+
+\subsubsection*{Research Objectives 1 and 2:} 
+The conventional similarity measures we examined were the Euclidean distance, Dynamic Time Warping, Hausdorff Distance, Edit Distance on Real Sequence, and Edit distance with Real Penalty. 
+The latter two are newer than the other ones, however, their prominence in the literature establishes them as conventional methods. 
+A commonality between these measures is that they are not context-aware. 
+In terms of noise tolerance, there was no consistency, and as for elasticity all but Ed are could adapt to local time shifts. 
+
+Both Move-Split-Merge and Symmetric Segment Path Distance are methods that were developed in order to address the shortcomings of the conventional methods.
+Based on this we categorized them as the newer distance measures. 
+
+
+\clearpage
+The development of MSM was a response to DTW and ERP while SSPD was an advancement of Hd.
+A feature that is shared between MSM and SSPD is that they both were designed to account for whole trajectory similarity.
+Additionally, they are more tolerant to noise than their respective conventional method inspirations.
+We saw this experimentally as MSM producing crisper clusterings than DTW and ERP and SSPD producing crisper clusterings than Hd.
+
+We were not able to determine any effects of metricity, neither for the conventional methods nor for the newer ones. 
+For the visual representation of how trajectory features were treated by the we refer to \Cref{app:ap-clu,app:h-clu}  
+
+
+\subsubsection*{Research Objective 3:}
+In our set up, there was only one application that tested the algorithms’ performance against each other. 
+The lack of diverse applications and their removal from real-world observations are limiting how much insight we could gain regarding broader uses for the measures. Nevertheless, the variance of the cluster we generated demonstrates that similarity distance measure choice matters.
+
+ We could have constructed arguments that would have framed a given measure as the most suited one for shape-based clustering. However, we reiterate could not have generalized its applicability to other tasks.
+
+Optimizing for global shape-similarity should be prioritized if the intended application is computer vision or migration analysis.  
+On the other hand, locally shifted similarities are needed for database management tasks such as outlier detection and trajectory uncertainty. An outlier in this context could be either a trajectory element that stands out from its surrounding elements or a trajectory that stands out from the rest. Trajectory uncertainty management seeks to increase the utility of trajectories by approximating locations between observations. 
+In both cases, a reference model of local resemblance is more apt.  
+
+Consequently, we remark that the accuracy and reliability of analysis or management tasks depend on whether or not an appropriate algorithm was chosen. 
+
+
+
+% In terms of usage for different applications here was only one application in this thesis. While being limiting for the insight we gathered it was enough to demonstrate that choice matters. All methods described were supposedly spatial-only trajectory similarity but the results they gave varied a lot – this point further supports the theory of there not being a ground truth of what similarity is for time-series. 
+% e
+% Algorithm selection had a substantial influence over the results, even in this scaled down experiment. We argue that one should not picking a method purely on the basis of it being prominent in the literature as it may biases that are not evident from the description resulting in misleading findings. 
+
+\clearpage
+\section{Further Work}
+
+% The work done in thesis a good foundation for more experiment.
+The work we have done for this thesis explored just one class of trajectory similarity and one particular application for similarity measures.
+There are aspects of trajectory similarity we did not inquire into. 
+Thus we suggest two extensions of our experiment which would facilitate a more comprehensive study. 
+
+
+% Larger data set, longer trajectories (trajectories that have not been arifically shortened), both.
+As we noted in \Cref{ch:5}, our set up was not conducive to examining the differences in computational complexity. 
+If it were possible, we would have liked to include an evaluation of measures’ performances; both for the data set used here and sets where the lengths of the trajectories had not been artificially shortened. 
+As with most algorithms, it is good to be informed about how they will perform as the size of the data or the data set increases.
+
+
+
+% There are are would be conductive to a more comprehensive study of trajectory similarly.
+It would make sense to include more applications for the measures.
+Along with clustering, classification is a commonly selected application for testing the measures. 
+However, we argue it would be interesting to run either an outlier detection or noise removal task. 
+This could hopefully highlight peculiarities of how the measures distinguish the trajectories.
+
+
+
+
+% \subsection{Thematic Areas for Continued Research}
+

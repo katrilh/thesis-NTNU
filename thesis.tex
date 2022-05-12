@@ -1,43 +1,42 @@
 \documentclass[british,titlepage]{ntnuthesis}
 
-\title{Master Document}
-\shorttitle{Master}
+
+\newtheorem{definition}{Definition}
+
+\title{Surveying Similarly Distance for Trajectory Data}
+\shorttitle{Trajectory Similarity}
 \author{Katrine Lie Holm}
 \shortauthor{K. L. Holm}
 \date{\today{}}
 \addbibresource{thesis.bib}
 
-\input{glossary.tex} % add glossary and acronym lists before document
+% \input{glossary.tex} % add glossary and acronym lists before document
 
 \begin{document}
 
 \input{chapters/0a-abstract.tex}
 \input{chapters/0b-sammendrag.tex}
+\input{chapters/0c-preface.tex}
 
 \tableofcontents
 \listoffigures
 \listoftables
-\lstlistoflistings
-
-\printglossary[type=\acronymtype] % Print acronyms
-\printglossary                    % Print glossary
 
 \input{chapters/1-intro}
-\input{chapters/2-background.tex}
-\input{chapters/3-related}
-\input{chapters/4-setup}
-\input{chapters/5-method}
+\input{chapters/2-background}
+\input{chapters/3-sim-algo}
+\input{chapters/4-rel-work}
+\input{chapters/5-setup-method}
+\input{chapters/6-results}
 \input{chapters/7-discussion}
 \input{chapters/8-conclusion}
-
 
 
 \chapter*{\bibname}
 \printbibliography[heading=none]
 
-\input{chapters/papers.tex}
-
 \appendix
-\input{appendices/a-appendix.tex}
-
+\input{appendices/a1-simtab.tex}
+\input{appendices/a2-ap-clusters.tex}
+\input{appendices/a3-h-clusters.tex}
 \end{document}

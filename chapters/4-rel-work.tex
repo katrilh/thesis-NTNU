@@ -1,0 +1,98 @@
+\chapter{Existing Surveys of Time-Series  Similarly Distance }
+\label{ch:4}
+
+With there being a large number of time-series similarity distance functions, it follows that there is an accompanying body of work which seeks to consolidate the scattered information.
+In this chapter we go over some of the those studies, and provide further motivation for the work conduced in this thesis. 
+
+We identify two varieties of studies: those that rank the measures according to some predetermined standard and those that provide comprehensive feature descriptions. 
+
+% and label them as surveys that analyze the measures on their own merits (grounds? features?) and those that run experiments to compare and contrast various ones.
+
+%%%%%%%
+
+%There is an existing body of work that seeks to consolidate the scattered information on different time series. [59, 58, 56,27, 24,17, 8]. The principal methods we noticed being brought forth across different reviews were DTW, and Euclidean distance, as well the Edit Distance based algorithms ERP and EDR. We acknowledge that there is a fifth measure, Longest Common Subsequence  (LCSS), which is comparably well-known and analyzed. Nevertheless we decided to exclude LCSS from this thesis to limit scope. With Euclidean distance and DTW being near (omnipresent) , comparing them to other measures gives familiar context for previously non-examined methods. 
+
+% We identify two “primary veins'' previous endeavors have been taken in order to compare the trajectory similarity measures; Either reviews that specify features of the measures abstractly [24] or performing data mining tasks in order to achieve numerical results[59]. Most frequently it was a bit of both, with most effort and weight being placed on the mining tasks. 
+
+
+%We identify two primary categories that previous endeavors have taken in order to compare the trajectory similarity measures.The first one are reviews that specify features and theoretical computational characteristics of the measures [24, 48]. The other kind are those that opt to implement the measures and run tests that produce numerical results[59, 56, 8]. Naturally, this approach included a brief discussion of the measures'  implementation details. 
+
+\section{Ranking Studies }
+
+\subsection{Trajectory Clustering}
+P. Besse et.al, the creators of SSPD, prefaced their work by examining existing distance functions for trajectories\cite{50-ReviewPerspective}. 
+The measures were categorized into "shape-based" ones and “warping-based” ones, referring to how a measure accounted for the temporal component of the trajectories. 
+
+Their work studied the different clusterings that were obtained through clustering tasks where the distance function varies.
+They determined that the “shape-based" distance measures gave better results than the “warping-based" ones. 
+However, they concluded this based on the cluster quality criteria they defined.
+The criterions resembled the Davies-Bouldin Index, but it was deconstructed so that the “between-like” and “within-like” evaluations were presented individually. 
+
+% \clearpage
+
+\subsection{Time Series Mining}
+H. Din et.al did an experimental comparison of both time-series representations and similarity distance measures in an effort to categorize mining techniques \cite{26-QueryingMining}. 
+Their motivation was that other studies had been too narrowly focused on a specific measure, or that the conclusions were too optimistic. 
+
+Their experiments used a nearest neighbor classifier to evaluate nine different similarity measures and eight different data representations.
+The thoroughness of their setup was further emphasized as they ran their experiments on 38 different time-series data sets. 
+While data sets originated from a variety of real sources, they were all suited to the mining task classification. 
+
+
+
+Under classification, labels are given to each time-series based on their similarity are to other series. Typically the observations receive one label each. 
+One key way classification differs from clustering is that in that classification results rend to be simpler to evaluate. 
+They are distinct usages of similarity distance and the conclusion drawn in this work are oriented towards the classification results. The features of the similarity measures themselves were not emphasized.  
+
+
+
+\section{Non-Ranking Studies}
+
+\subsection{Review of Trajectory Measues}
+Work done by N. Magdy et.al examined 13  different trajectory similarity measures\cite{24-ReviewTrajectory} in a theoretical manner.  
+Of the seven discussed in \Cref{ch:3}, five of them were examined by the authors.
+
+Their work did not include an experimental component. 
+The measures were categorized based on implicit similarity definition, and the traits of each measure.
+Namely if whether or not they were noise-tolerant, could handle locally time-shifted data, if they fulfilled the requirements of metricity and their computational cost.
+
+Furthermore, the researchers contrasted how the required data format varied, and how that affected the notion of similarity.
+The work concluded by underlining that there is no measure that is the most appropriate for any given data set. 
+They expressed a wish for a generic trajectory similarity measure which could then be adapted to accommodate the desired specific type of similarity depending on the application. 
+
+\subsection{Effectiveness Study}
+H. Wang et.al conducted an eﬀectiveness study on six trajectory similarity measures\cite{8-EffectivenessStudy} and half of them that were also discussed in \Cref{ch:3}. 
+After a theoretical summary of the measures, they set up an experiment to test their \textit{effectiveness}.
+The study was realized on a data set where the researchers had intentionally altered some of the entries. This was done so that the advantages and drawbacks of their selected measures would be highlighted.
+
+
+One of the aims of this study was to lay the foundation for a new benchmark that could objectively quantify the effectiveness of similarity measures. 
+They tested the measures under the following trajectory transformations: a simulated sampling rate change, added noise, and shifts of the trajectory, both temporal and spatial. 
+The benchmark compared the original trajectory to a transformed one, changing which similarity measures were used. 
+The measures that recognized them as the same trajectory, or as similar trajectories, were classified as “passing" under that transformation. 
+Using the experimental results they created a table that summarized each measures' effectiveness under the various transformations.
+
+
+
+\subsection{Vehicle Trajectory Survey}
+Abas et.al did a comprehensive survey of trajectory data\cite{85-VehicleTrajectory} wherein they focused on vehicular data. 
+Their work investigated how the inherent inaccuracies of GPS data affect the quality of trajectory analysis.
+They surveyed different trajectory representations, noting the advantages and disadvantages of each. 
+Next, they discussed processing techniques that are used to handle the drawbacks of a given representation. 
+Some of the trajectory representations they brought up were road-network constrained trajectories, binary-encoded trajectories, and hash-based trajectories. 
+
+
+A selection of similarity measures was specified for each type of representation and they noted whether or not a measure fulfilled certain properties. 
+The properties in question were metricity, parameter dependency, ability to handle local time shifts, and ability to handle noise. 
+Four of the measures that were were brought up in their work are also discussed in this thesis. One of the research gaps they remarked was how one would process  "big trajectory data".
+ 
+ 
+\section{Our Contribution}
+
+This thesis seeks to add the body of work that compares and contrasts trajectory similarity distance measures.
+The experiment we conducted here is based on various elements of the aforementioned studies. 
+
+We did not see a selection of measures matching ours; notably, few studies examine MSM and SSPD which is in all likelihood a testament to their novelty. 
+We remark that the efforts described in  “Trajectory Clustering” and “Vehicle Trajectories” have had major influences on our work. 
+We hope to provide a comprehensive comparison wherein feature description and clustering results play equally important roles.
+

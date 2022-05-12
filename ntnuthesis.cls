@@ -153,6 +153,7 @@
 \RequirePackage{enumitem}                   % customising list appearance
 \RequirePackage{graphicx}                   % including figures
 \RequirePackage{amsmath}                    % advanced math typesetting
+\RequirePackage{mathtools}					% even more math typesettings
 \RequirePackage[                            % subfigures with captions within figures
     font=small,                             % and customisation of captions
     labelfont=bf,
@@ -180,13 +181,26 @@
 \RequirePackage{csvsimple}                  % tables from csv files
 \RequirePackage{booktabs}                   % better formatting of tables
 \RequirePackage{gnuplottex}                 % for generating gnuplots on the fly
+\RequirePackage{parskip}                    % Formatting the paragraphs
 \RequirePackage{hyperref}                   % interactive cross references
-\ifcapitalize
-    \RequirePackage[capitalize,noabbrev]{cleveref}   % automatic cross references
-\else
-    \RequirePackage[noabbrev]{cleveref}
-\fi
+\RequirePackage{minted}
+\RequirePackage{rotating}       % table options 
+\RequirePackage{lscape}
+
+% [table]{xcolor}}
+% \RequirePackage[table]{xcolor}
+
+% \usepackage{xcolor}
+
+% \ifcapitalize
+%     \RequirePackage[capitalize,noabbrev]{cleveref}   % automatic cross references
+% \else
+%     \RequirePackage[noabbrev]{cleveref}
+% \fi
+% by commenting out the above, i might have messed something up, but that oki...
 \RequirePackage[acronym]{glossaries}        % create a glossary and acronym list
+\RequirePackage[nameinlink]{cleveref}       % for indoc clickable links 
+
 
 %% CUSTOMISATION
 
